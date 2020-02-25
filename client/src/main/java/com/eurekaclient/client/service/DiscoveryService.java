@@ -10,6 +10,6 @@ public class DiscoveryService {
     private String value;
 
     public String printMsg(){
-        return "你好";
+        return "你好"+value;
     }
 }
