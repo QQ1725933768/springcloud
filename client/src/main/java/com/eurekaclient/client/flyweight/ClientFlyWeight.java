@@ -28,6 +28,13 @@ public class ClientFlyWeight {
     @Resource
     private CrmSellClientServiceImpl crmSellClientService;
 
+    /**
+     * @title
+     * @description 获取CRM卖车客户端
+     * @author xumeng
+     * @updateTime 2020/3/5 20:26
+     * @throws
+     */
     public CrmClientImpl getSellCrmClientImpl() {
         CrmClientImpl CRM_SELL = (CrmClientImpl) AbstractClientCache.CLIENT_CACHE.get("CRM_SELL");
         if (CRM_SELL == null) {
@@ -36,6 +43,13 @@ public class ClientFlyWeight {
         return CRM_SELL;
     }
 
+    /**
+     * @title
+     * @description 获取CRM买车客户端
+     * @author xumeng
+     * @updateTime 2020/3/5 20:27
+     * @throws
+     */
     public CrmClientImpl getBuyCrmClientImpl() {
         CrmClientImpl CRM_BUY = (CrmClientImpl) AbstractClientCache.CLIENT_CACHE.get("CRM_BUY");
         if (CRM_BUY == null) {
