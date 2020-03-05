@@ -29,7 +29,7 @@ public class DiscoveryController {
     @GetMapping("/pc")
     public String getMsg(String type){
         System.out.println(discoveryClient.getServices());
-        CrmClientImpl buyCrmClientImpl = clientFlyWeight.getBuyCrmClientImpl();
+        CrmClientImpl buyCrmClientImpl = clientFlyWeight.getCrmClientImpl(1);
         buyCrmClientImpl.persistClient(type);
         return discoveryServiceImpl.printMsg();
     }
