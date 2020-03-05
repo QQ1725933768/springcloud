@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
 public class CrmSellClientServiceImpl implements IClientService {
 
     @Override
-    public void persistClient() {
-
+    public void persistClient(String type) {
+        System.out.println(type);
     }
 
     @Override

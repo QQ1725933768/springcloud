@@ -5,15 +5,15 @@ import com.eurekaclient.client.service.IClientService;
 /**
  * @author XuMeng
  * @version 1.0.0
- * @ClassName AbstractionClient.java
+ * @ClassName AbstractClient.java
  * @Description TODO
  * @createTime 2020年03月03日 22:55:00
  */
-public abstract class AbstractionClient {
+public abstract class AbstractClient {
 
-    private IClientService clientService;
+    public IClientService clientService;
 
-    public AbstractionClient(IClientService clientService) {
+    public AbstractClient(IClientService clientService) {
         this.clientService = clientService;
     }
 
@@ -24,7 +24,7 @@ public abstract class AbstractionClient {
      * @author xumeng
      * @updateTime 2020/3/5 18:49
      */
-    public abstract void persistClient();
+    public abstract void persistClient(String type);
 
     /**
      * @throws

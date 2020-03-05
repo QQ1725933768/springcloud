@@ -1,6 +1,6 @@
 package com.eurekaclient.client.abstraction.impl;
 
-import com.eurekaclient.client.abstraction.AbstractionClient;
+import com.eurekaclient.client.abstraction.AbstractClient;
 import com.eurekaclient.client.service.IClientService;
 
 /**
@@ -10,7 +10,7 @@ import com.eurekaclient.client.service.IClientService;
  * @Description TODO
  * @createTime 2020年03月05日 18:55:00
  */
-public class CrmClientImpl extends AbstractionClient {
+public class CrmClientImpl extends AbstractClient {
 
 
     public CrmClientImpl(IClientService clientService) {
@@ -18,8 +18,8 @@ public class CrmClientImpl extends AbstractionClient {
     }
 
     @Override
-    public void persistClient() {
-
+    public void persistClient(String type) {
+        clientService.persistClient(type);
     }
 
     @Override

@@ -2,7 +2,7 @@ package com.eurekaclient.client.service;
 
 public interface IClientService {
 
-    void persistClient();
+    void persistClient(String type);
 
     void writeFollowRecord();
 
