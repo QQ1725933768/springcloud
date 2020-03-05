@@ -1,11 +1,11 @@
-package com.eurekaclient.client.service;
+package com.eurekaclient.client.service.impl;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DiscoveryService {
+public class DiscoveryServiceImpl {
 
     @Value("${eureka.client.serviceUrl.defaultZone}")
     private String value;

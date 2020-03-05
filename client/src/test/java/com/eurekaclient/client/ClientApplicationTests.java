@@ -11,6 +11,11 @@ public class ClientApplicationTests {
 
     @Test
     public void contextLoads() {
+
+        Integer i = 127;
+        Integer j = 127;
+        Integer integer = 127;
+        System.out.println(i.equals(integer));
     }
 
 }
