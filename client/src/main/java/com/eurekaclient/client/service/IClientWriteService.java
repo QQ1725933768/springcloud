@@ -2,7 +2,7 @@ package com.eurekaclient.client.service;
 
 import com.eurekaclient.client.pojo.bo.ClientInfoBO;
 
-public interface IClientService {
+public interface IClientWriteService {
 
     void persistClient(String type);
 

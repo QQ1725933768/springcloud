@@ -2,8 +2,8 @@ package com.eurekaclient.client.flyweight;
 
 import com.eurekaclient.client.abstraction.AbstractClientWrite;
 import com.eurekaclient.client.abstraction.impl.CrmClientWriteImpl;
-import com.eurekaclient.client.service.impl.CrmBuyClientServiceImpl;
-import com.eurekaclient.client.service.impl.CrmSellClientServiceImpl;
+import com.eurekaclient.client.service.impl.CrmBuyClientWriteServiceImpl;
+import com.eurekaclient.client.service.impl.CrmSellClientWriteServiceImpl;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -24,10 +24,10 @@ public class ClientFlyWeight {
     private static final Map<String, AbstractClientWrite> CLIENT_WRITE_CACHE = new ConcurrentHashMap<>();
 
     @Resource
-    private CrmBuyClientServiceImpl crmBuyClientService;
+    private CrmBuyClientWriteServiceImpl crmBuyClientService;
 
     @Resource
-    private CrmSellClientServiceImpl crmSellClientService;
+    private CrmSellClientWriteServiceImpl crmSellClientService;
 
     @PostConstruct
     public void init(){
