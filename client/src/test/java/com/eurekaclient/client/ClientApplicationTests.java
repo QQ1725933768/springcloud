@@ -20,10 +20,10 @@ public class ClientApplicationTests {
     @Test
     public void contextLoads() {
 
-        CrmClientWriteImpl client = clientFlyWeight.getBuyCrmClientImpl();
-        CrmClientWriteImpl client1 = clientFlyWeight.getBuyCrmClientImpl();
+        CrmClientWriteImpl client = clientFlyWeight.getCrmClientImpl(0);
+        CrmClientWriteImpl client1 = clientFlyWeight.getCrmClientImpl(0);
         CompletableFuture.runAsync(() -> {
-            CrmClientWriteImpl client2 = clientFlyWeight.getBuyCrmClientImpl();
+            CrmClientWriteImpl client2 = clientFlyWeight.getCrmClientImpl(0);
             client2.persistClient("999999");
         });
         client1.persistClient("78888");
