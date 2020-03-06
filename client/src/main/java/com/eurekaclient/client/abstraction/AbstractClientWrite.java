@@ -1,19 +1,20 @@
 package com.eurekaclient.client.abstraction;
 
+import com.eurekaclient.client.pojo.bo.ClientInfoBO;
 import com.eurekaclient.client.service.IClientService;
 
 /**
  * @author XuMeng
  * @version 1.0.0
- * @ClassName AbstractClient.java
+ * @ClassName AbstractClientWrite.java
  * @Description TODO
  * @createTime 2020年03月03日 22:55:00
  */
-public abstract class AbstractClient {
+public abstract class AbstractClientWrite {
 
     public IClientService clientService;
 
-    public AbstractClient(IClientService clientService) {
+    public AbstractClientWrite(IClientService clientService) {
         this.clientService = clientService;
     }
 
@@ -51,8 +52,8 @@ public abstract class AbstractClient {
      * @updateTime 2020/3/5 19:14
      * @throws
      */
-    public void updateClientInfo(){
-        clientService.updateClientInfo();
+    public void updateClientInfo(ClientInfoBO clientInfoBO){
+        clientService.updateClientInfo(clientInfoBO);
     }
 
 }

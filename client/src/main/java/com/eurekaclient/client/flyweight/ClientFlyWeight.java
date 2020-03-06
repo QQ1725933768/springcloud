@@ -1,11 +1,9 @@
 package com.eurekaclient.client.flyweight;
 
-import com.eurekaclient.client.abstraction.AbstractClient;
-import com.eurekaclient.client.abstraction.impl.CrmClientImpl;
-import com.eurekaclient.client.service.IClientService;
+import com.eurekaclient.client.abstraction.AbstractClientWrite;
+import com.eurekaclient.client.abstraction.impl.CrmClientWriteImpl;
 import com.eurekaclient.client.service.impl.CrmBuyClientServiceImpl;
 import com.eurekaclient.client.service.impl.CrmSellClientServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -23,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class ClientFlyWeight {
 
-    private static final Map<String, AbstractClient> CLIENT_CACHE = new ConcurrentHashMap<>();
+    private static final Map<String, AbstractClientWrite> CLIENT_WRITE_CACHE = new ConcurrentHashMap<>();
 
     @Resource
     private CrmBuyClientServiceImpl crmBuyClientService;
@@ -33,8 +31,8 @@ public class ClientFlyWeight {
 
     @PostConstruct
     public void init(){
-        CLIENT_CACHE.put("CRM_SELL",new CrmClientImpl(crmSellClientService));
-        CLIENT_CACHE.put("CRM_BUY",new CrmClientImpl(crmBuyClientService));
+        CLIENT_WRITE_CACHE.put("CRM_SELL",new CrmClientWriteImpl(crmSellClientService));
+        CLIENT_WRITE_CACHE.put("CRM_BUY",new CrmClientWriteImpl(crmBuyClientService));
     }
 
     /**
@@ -45,14 +43,14 @@ public class ClientFlyWeight {
      * @updateTime 2020/3/5 20:46
      * @throws
      */
-    public CrmClientImpl getCrmClientImpl(int type) {
+    public CrmClientWriteImpl getCrmClientImpl(int type) {
         switch (type){
             case 1:
-                return (CrmClientImpl) CLIENT_CACHE.get("CRM_BUY");
+                return (CrmClientWriteImpl) CLIENT_WRITE_CACHE.get("CRM_BUY");
             case 2:
-                return (CrmClientImpl) CLIENT_CACHE.get("CRM_SELL");
+                return (CrmClientWriteImpl) CLIENT_WRITE_CACHE.get("CRM_SELL");
             default:
-                throw new RuntimeException("not found CrmClientImpl");
+                throw new RuntimeException("not found CrmClientWriteImpl");
         }
     }
 }

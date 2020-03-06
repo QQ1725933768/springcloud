@@ -1,7 +1,11 @@
 package com.eurekaclient.client.service.impl;
 
+import com.eurekaclient.client.pojo.bo.ClientInfoBO;
 import com.eurekaclient.client.service.IClientService;
+import com.eurekaclient.client.service.ICrmClientService;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author XuMeng
@@ -12,6 +16,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class CrmBuyClientServiceImpl implements IClientService {
+
+    @Resource
+    private ICrmClientService crmClientService;
 
     @Override
     public void persistClient(String type) {
@@ -29,7 +36,7 @@ public class CrmBuyClientServiceImpl implements IClientService {
     }
 
     @Override
-    public void updateClientInfo() {
-
+    public void updateClientInfo(ClientInfoBO clientInfoBO) {
+        crmClientService.updateCrmClientInfo(clientInfoBO.getCrmClient());
     }
 }

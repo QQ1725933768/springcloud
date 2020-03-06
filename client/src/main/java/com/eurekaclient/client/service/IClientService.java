@@ -1,5 +1,7 @@
 package com.eurekaclient.client.service;
 
+import com.eurekaclient.client.pojo.bo.ClientInfoBO;
+
 public interface IClientService {
 
     void persistClient(String type);
@@ -8,5 +10,5 @@ public interface IClientService {
 
     void updateClientNeedInfo();
 
-    void updateClientInfo();
+    void updateClientInfo(ClientInfoBO clientInfoBO);
 }

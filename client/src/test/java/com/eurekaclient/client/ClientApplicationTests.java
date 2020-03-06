@@ -1,9 +1,7 @@
 package com.eurekaclient.client;
 
-import com.eurekaclient.client.abstraction.impl.CrmClientImpl;
+import com.eurekaclient.client.abstraction.impl.CrmClientWriteImpl;
 import com.eurekaclient.client.flyweight.ClientFlyWeight;
-import com.eurekaclient.client.service.IClientService;
-import com.eurekaclient.client.service.impl.CrmBuyClientServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +20,10 @@ public class ClientApplicationTests {
     @Test
     public void contextLoads() {
 
-        CrmClientImpl client = clientFlyWeight.getBuyCrmClientImpl();
-        CrmClientImpl client1 = clientFlyWeight.getBuyCrmClientImpl();
+        CrmClientWriteImpl client = clientFlyWeight.getBuyCrmClientImpl();
+        CrmClientWriteImpl client1 = clientFlyWeight.getBuyCrmClientImpl();
         CompletableFuture.runAsync(() -> {
-            CrmClientImpl client2 = clientFlyWeight.getBuyCrmClientImpl();
+            CrmClientWriteImpl client2 = clientFlyWeight.getBuyCrmClientImpl();
             client2.persistClient("999999");
         });
         client1.persistClient("78888");
