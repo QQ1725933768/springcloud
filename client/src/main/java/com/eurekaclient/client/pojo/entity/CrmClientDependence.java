@@ -1,5 +1,8 @@
 package com.eurekaclient.client.pojo.entity;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +11,8 @@ import java.io.Serializable;
  * @author makejava
  * @since 2020-03-06 21:18:00
  */
+@Data
+@Accessors(chain = true)
 public class CrmClientDependence implements Serializable {
     private static final long serialVersionUID = 817622861197171000L;
     /**
@@ -46,78 +51,5 @@ public class CrmClientDependence implements Serializable {
     * 备注
     */
     private String remark;
-
-
-    public Integer getDependenceId() {
-        return dependenceId;
-    }
-
-    public void setDependenceId(Integer dependenceId) {
-        this.dependenceId = dependenceId;
-    }
-
-    public Integer getSourceType() {
-        return sourceType;
-    }
-
-    public void setSourceType(Integer sourceType) {
-        this.sourceType = sourceType;
-    }
-
-    public Integer getChannelType() {
-        return channelType;
-    }
-
-    public void setChannelType(Integer channelType) {
-        this.channelType = channelType;
-    }
-
-    public String getReferrerName() {
-        return referrerName;
-    }
-
-    public void setReferrerName(String referrerName) {
-        this.referrerName = referrerName;
-    }
-
-    public String getReferrerPhone() {
-        return referrerPhone;
-    }
-
-    public void setReferrerPhone(String referrerPhone) {
-        this.referrerPhone = referrerPhone;
-    }
-
-    public Integer getGradeType() {
-        return gradeType;
-    }
-
-    public void setGradeType(Integer gradeType) {
-        this.gradeType = gradeType;
-    }
-
-    public Integer getCustomerExperience() {
-        return customerExperience;
-    }
-
-    public void setCustomerExperience(Integer customerExperience) {
-        this.customerExperience = customerExperience;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
 
 }

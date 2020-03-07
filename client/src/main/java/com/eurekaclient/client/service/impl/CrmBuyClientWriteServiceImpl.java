@@ -1,6 +1,6 @@
 package com.eurekaclient.client.service.impl;
 
-import com.eurekaclient.client.pojo.bo.ClientInfoBO;
+import com.eurekaclient.client.pojo.bo.CrmClientInfoBO;
 import com.eurekaclient.client.service.IClientWriteService;
 import com.eurekaclient.client.service.ICrmClientService;
 import org.springframework.stereotype.Service;
@@ -21,8 +21,8 @@ public class CrmBuyClientWriteServiceImpl implements IClientWriteService {
     private ICrmClientService crmClientService;
 
     @Override
-    public void persistClient(String type) {
-        System.out.println(type);
+    public void persistClient(CrmClientInfoBO crmClientInfoBO) {
+        System.out.println("");
     }
 
     @Override
@@ -36,7 +36,7 @@ public class CrmBuyClientWriteServiceImpl implements IClientWriteService {
     }
 
     @Override
-    public void updateClientInfo(ClientInfoBO clientInfoBO) {
-        crmClientService.updateCrmClientInfo(clientInfoBO.getCrmClient());
+    public void updateClientInfo(CrmClientInfoBO crmClientInfoBO) {
+        crmClientService.updateCrmClientInfo(crmClientInfoBO.getCrmClient());
     }
 }

@@ -1,5 +1,8 @@
 package com.eurekaclient.client.pojo.entity;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,6 +12,8 @@ import java.io.Serializable;
  * @author makejava
  * @since 2020-03-06 21:17:54
  */
+@Data
+@Accessors(chain = true)
 public class CrmClientBelong implements Serializable {
     private static final long serialVersionUID = 982987155605136324L;
     /**
@@ -83,150 +88,5 @@ public class CrmClientBelong implements Serializable {
     * 所属公司ID
     */
     private Integer companyId;
-
-
-    public Integer getUniqueId() {
-        return uniqueId;
-    }
-
-    public void setUniqueId(Integer uniqueId) {
-        this.uniqueId = uniqueId;
-    }
-
-    public Integer getBelongToId() {
-        return belongToId;
-    }
-
-    public void setBelongToId(Integer belongToId) {
-        this.belongToId = belongToId;
-    }
-
-    public String getBelongToName() {
-        return belongToName;
-    }
-
-    public void setBelongToName(String belongToName) {
-        this.belongToName = belongToName;
-    }
-
-    public Integer getFollowStatus() {
-        return followStatus;
-    }
-
-    public void setFollowStatus(Integer followStatus) {
-        this.followStatus = followStatus;
-    }
-
-    public Date getAllocateTime() {
-        return allocateTime;
-    }
-
-    public void setAllocateTime(Date allocateTime) {
-        this.allocateTime = allocateTime;
-    }
-
-    public Date getTradingTime() {
-        return tradingTime;
-    }
-
-    public void setTradingTime(Date tradingTime) {
-        this.tradingTime = tradingTime;
-    }
-
-    public Date getDefeatTime() {
-        return defeatTime;
-    }
-
-    public void setDefeatTime(Date defeatTime) {
-        this.defeatTime = defeatTime;
-    }
-
-    public Integer getConfirmationStatus() {
-        return confirmationStatus;
-    }
-
-    public void setConfirmationStatus(Integer confirmationStatus) {
-        this.confirmationStatus = confirmationStatus;
-    }
-
-    public Date getNextFollowTime() {
-        return nextFollowTime;
-    }
-
-    public void setNextFollowTime(Date nextFollowTime) {
-        this.nextFollowTime = nextFollowTime;
-    }
-
-    public Date getRevisitTime() {
-        return revisitTime;
-    }
-
-    public void setRevisitTime(Date revisitTime) {
-        this.revisitTime = revisitTime;
-    }
-
-    public Integer getDependenceId() {
-        return dependenceId;
-    }
-
-    public void setDependenceId(Integer dependenceId) {
-        this.dependenceId = dependenceId;
-    }
-
-    public Integer getClientId() {
-        return clientId;
-    }
-
-    public void setClientId(Integer clientId) {
-        this.clientId = clientId;
-    }
-
-    public Integer getRequireType() {
-        return requireType;
-    }
-
-    public void setRequireType(Integer requireType) {
-        this.requireType = requireType;
-    }
-
-    public Integer getClueType() {
-        return clueType;
-    }
-
-    public void setClueType(Integer clueType) {
-        this.clueType = clueType;
-    }
-
-    public Integer getBackNum() {
-        return backNum;
-    }
-
-    public void setBackNum(Integer backNum) {
-        this.backNum = backNum;
-    }
-
-    public Date getBackTime() {
-        return backTime;
-    }
-
-    public void setBackTime(Date backTime) {
-        this.backTime = backTime;
-    }
-
-    public Integer getMarketId() {
-        return marketId;
-    }
-
-    public void setMarketId(Integer marketId) {
-        this.marketId = marketId;
-    }
-
-    public Integer getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
 
 }

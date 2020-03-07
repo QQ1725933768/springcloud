@@ -1,6 +1,7 @@
 package com.eurekaclient.client.abstraction.impl;
 
 import com.eurekaclient.client.abstraction.AbstractClientWrite;
+import com.eurekaclient.client.pojo.bo.ClientBO;
 import com.eurekaclient.client.service.IClientWriteService;
 
 /**
@@ -18,17 +19,17 @@ public class CrmClientWriteImpl extends AbstractClientWrite {
     }
 
     @Override
-    public void persistClient(String type) {
-        clientWriteService.persistClient(type);
+    public void persistClient(ClientBO clientBO) {
+        clientWriteService.persistClient(clientBO.getCrmClientInfoBO());
     }
 
     @Override
     public void writeFollowRecord() {
-
+        clientWriteService.writeFollowRecord();
     }
 
     @Override
     public void updateClientNeedInfo() {
-
+        clientWriteService.updateClientNeedInfo();
     }
 }

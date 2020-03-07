@@ -1,6 +1,7 @@
 package com.eurekaclient.client.abstraction;
 
-import com.eurekaclient.client.pojo.bo.ClientInfoBO;
+import com.eurekaclient.client.pojo.bo.ClientBO;
+import com.eurekaclient.client.pojo.bo.CrmClientInfoBO;
 import com.eurekaclient.client.service.IClientWriteService;
 
 /**
@@ -25,7 +26,7 @@ public abstract class AbstractClientWrite {
      * @author xumeng
      * @updateTime 2020/3/5 18:49
      */
-    public abstract void persistClient(String type);
+    public abstract void persistClient(ClientBO clientBO);
 
     /**
      * @throws
@@ -52,8 +53,8 @@ public abstract class AbstractClientWrite {
      * @updateTime 2020/3/5 19:14
      * @throws
      */
-    public void updateClientInfo(ClientInfoBO clientInfoBO){
-        clientWriteService.updateClientInfo(clientInfoBO);
+    public void updateClientInfo(CrmClientInfoBO crmClientInfoBO){
+        clientWriteService.updateClientInfo(crmClientInfoBO);
     }
 
 }

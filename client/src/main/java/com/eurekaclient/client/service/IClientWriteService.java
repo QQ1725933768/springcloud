@@ -1,14 +1,15 @@
 package com.eurekaclient.client.service;
 
-import com.eurekaclient.client.pojo.bo.ClientInfoBO;
+import com.eurekaclient.client.pojo.bo.CrmClientInfoBO;
+import lombok.NonNull;
 
 public interface IClientWriteService {
 
-    void persistClient(String type);
+    void persistClient(@NonNull CrmClientInfoBO crmClientInfoBO);
 
     void writeFollowRecord();
 
     void updateClientNeedInfo();
 
-    void updateClientInfo(ClientInfoBO clientInfoBO);
+    void updateClientInfo(@NonNull CrmClientInfoBO crmClientInfoBO);
 }

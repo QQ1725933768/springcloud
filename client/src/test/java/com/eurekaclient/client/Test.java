@@ -1,9 +1,6 @@
 package com.eurekaclient.client;
 
-import com.eurekaclient.client.designmode.SimpleFactory;
-import com.eurekaclient.client.mode.Train;
-import com.eurekaclient.client.mode.Vehicle;
-import com.eurekaclient.client.pojo.surport.TailedServiceType;
+import lombok.NonNull;
 
 /**
  * @author XuMeng
@@ -15,10 +12,7 @@ import com.eurekaclient.client.pojo.surport.TailedServiceType;
 public class Test {
 
     public static void main(String[] args) throws Exception {
-
-        Vehicle vehicle = SimpleFactory.createVehicle(Train.class);
-        vehicle.vehicleRunning();
-
-        TailedServiceType.getValueByKey(5);
+        @NonNull String str = null;
+        System.out.println(str);
     }
 }

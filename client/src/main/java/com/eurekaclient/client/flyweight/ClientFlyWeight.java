@@ -39,12 +39,12 @@ public class ClientFlyWeight {
      * @title
      * @description TODO
      * @author xumeng
-     * @param type 1 买车 2 卖车
+     * @param clientType 1 买车 2 卖车
      * @updateTime 2020/3/5 20:46
      * @throws
      */
-    public CrmClientWriteImpl getCrmClientImpl(int type) {
-        switch (type){
+    public CrmClientWriteImpl getCrmClientWriteImpl(int clientType) {
+        switch (clientType){
             case 1:
                 return (CrmClientWriteImpl) CLIENT_WRITE_CACHE.get("CRM_BUY");
             case 2:
